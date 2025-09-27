@@ -1,0 +1,59 @@
+---
+---
+// Import the Cayman theme, then override
+@import "{{ site.theme }}";
+
+:root{
+  --brand:#2563eb;      /* blue */
+  --brand-alt:#7c3aed;  /* purple */
+  --ink:#0f172a;        /* slate-900 */
+}
+
+/* Gradient hero (top banner) */
+.page-header {
+  background: linear-gradient(135deg, var(--brand), var(--brand-alt));
+}
+
+/* Tweak title and subtitle spacing */
+.project-name { font-weight: 800; letter-spacing:.2px; }
+.project-tagline { opacity:.95; }
+
+/* Avatar */
+.avatar{
+  width:120px; height:120px; border-radius:999px;
+  object-fit:cover; border:3px solid #fff;
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
+  margin-right:16px;
+}
+
+/* Hero wrapper */
+.hero { display:flex; align-items:center; gap:16px; margin:12px 0 8px; }
+
+/* Project cards */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:16px;
+  margin-top:12px;
+}
+.card{
+  background:#fff; border-radius:14px; padding:16px;
+  box-shadow:0 6px 18px rgba(0,0,0,.08);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.card:hover{ transform:translateY(-4px); box-shadow:0 10px 24px rgba(0,0,0,.12); }
+.card .thumb{
+  width:100%; height:140px; object-fit:cover; border-radius:10px; margin-bottom:10px;
+}
+.card h3{ margin:.3rem 0 .4rem; }
+.btn{
+  display:inline-block; padding:8px 12px; border-radius:999px;
+  background:var(--brand); color:#fff; text-decoration:none; font-weight:600;
+  margin-right:8px;
+}
+.btn-outline{
+  background:transparent; color:var(--brand);
+  border:2px solid var(--brand);
+}
+a { text-decoration:none; border-bottom:1px solid rgba(37,99,235,.25); }
+a:hover { border-color:transparent; }
