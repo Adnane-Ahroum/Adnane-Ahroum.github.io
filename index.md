@@ -1,38 +1,32 @@
-# 👋 Hi, I'm Adnane Ahroum  
-Data Science Graduate Student | AI & Machine Learning Enthusiast  
+---
+layout: default
+title: Home
+---
 
-Welcome to my professional portfolio! This site highlights my projects and experiences in Computer Science and Data Science.  
+# 👋 Hi, I'm **Adnane Ahroum**  
+_Data Science graduate student | AI & Machine Learning_
+
+Welcome to my portfolio. I build intelligent systems that turn data into decisions.
+This site highlights selected projects and internships that reflect my interests in healthcare AI,
+applied machine learning, and practical, product-focused engineering.
+
+- 📍 New Rochelle, NY — open to internships and collaborations  
+- ✉️ [Email](mailto:adnaneahroum69@gmail.com) · 🔗 [LinkedIn](https://www.linkedin.com/in/adnane-ahroum-337576185/) · 💻 [GitHub](https://github.com/Adnane-Ahroum)
 
 ---
 
-## 🚀 Featured Projects  
+## 🚀 Featured Projects
 
-### 🧠 Brain Tumor Segmentation & Classification  
-- Built a deep learning pipeline with **PyTorch, MONAI, and Apache Airflow**.  
-- Worked with the BraTS medical dataset.  
-- [View on GitHub](https://github.com/Adnane-Ahroum/BrainTumorPipeline)  
-
----
-
-### 👻 Bust The Ghost (Game AI)  
-- Developed a Unity game that demonstrates **Bayesian Inference** principles.  
-- Combines creativity with AI concepts.  
-- [View on GitHub](https://github.com/Adnane-Ahroum/BustTheGhost)  
+- **[Brain Tumor Segmentation & Classification](/projects/brain-tumor/)** — End‑to‑end deep learning pipeline (PyTorch, MONAI, Apache Airflow) on BraTS.
+- **[Bust the Ghost (Game AI)](/projects/bust-the-ghost/)** — Unity demo of Bayesian Inference through interactive gameplay.
+- **[Glow Mart App](/projects/glow-mart/)** — React‑Native app for a lighting retailer with Firebase backend.
 
 ---
 
-### 💡 Glow Mart Mobile App  
-- Shopping app for a lighting company built with **React-Native & Firebase**.  
-- Features order tracking, product browsing, and bill retrieval.  
-- [View on GitHub](https://github.com/Adnane-Ahroum/GlowMart)  
+## 📄 Resume
+- **[Download my resume (PDF)](/resume/Adnane-AhroumResume.pdf)**
 
 ---
 
-## 📄 Resume  
-[Download Resume (PDF)](link-to-your-resume.pdf)  
-
----
-
-## 🌐 Connect With Me  
-- [LinkedIn](https://www.linkedin.com/in/adnane-ahroum-337576185/)  
-- [GitHub](https://github.com/Adnane-Ahroum)  
+## 📝 Writing (optional)
+- Coming soon: short posts explaining approaches, tradeoffs, and results.****
