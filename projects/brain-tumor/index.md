@@ -11,12 +11,12 @@ It combines **segmentation (U-Net)** and **classification (DenseNet-121)**, opti
 ---
 
 ## 📊 Capstone Poster
-![Capstone Poster](/assets/images/capstone-poster.png)
+![Capstone Poster](CapstonePoster.png)
 
 ---
 
 ## 🔬 Pipeline Architecture
-![Pipeline Architecture](/assets/images/pipeline-architecture.png)
+![Pipeline Architecture](architecture.png)
 
 **Stage 1 — Segmentation (3D U-Net):**
 - Inputs: multi-modal MRI scans (T1, T1ce, T2, FLAIR)  
@@ -36,7 +36,13 @@ It combines **segmentation (U-Net)** and **classification (DenseNet-121)**, opti
 - Dice Loss converged to **0.18** → strong overlap between predicted vs. ground truth masks  
 - Visual comparison:
 
-![Segmentation Results](/assets/images/segmentation-results.png)
+| Learning Rate | Validation Dice | Dice Tumor Core |
+|---------------|-----------------|-----------------|
+| <img src="./SEGlearningrate.png" width="300"/> | <img src="./SEGmeandice.png" width="300"/> | <img src="./SEGmeandicetumorcore.png" width="300"/> |
+
+| Whole Tumor Dice | Training Loss | Enhancing Tumor Dice |
+|------------------|---------------|----------------------|
+| <img src="./SEGmeandicewholetumor.png" width="300"/> | <img src="./SEGmeantrainloss.png" width="300"/> | <img src="./VALIDATION EHABNED TUMOR .png" width="300"/> |
 
 ---
 
