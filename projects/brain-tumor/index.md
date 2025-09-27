@@ -46,23 +46,35 @@ It combines **segmentation (U-Net)** and **classification (DenseNet-121)**, opti
 
 ---
 
-### Classification Results
-- Glioma: **97% accuracy**  
-- Meningioma: **78% accuracy**  
-- Pituitary: **85% accuracy**  
+### 🎯 Classification Performance
 
-Visualization (blue = ground truth, red = prediction):  
-![Classification MRI](/assets/images/classification-mri.png)
+Our classification stage (DenseNet-121) achieved **strong accuracy across tumor types** (Glioma, Meningioma, Pituitary).  
+Below are key results that show how the model learned to distinguish tumors and where it sometimes made mistakes.
+
+| Validation Accuracy | Validation Loss | Training Accuracy |
+|---------------------|-----------------|-------------------|
+| <img src="./ClassificationVALACC.png" width="280"/> | <img src="./ClassificationVALLOSS.png" width="280"/> | <img src="./ClassificationTRAINACC.png" width="280"/> |
+
+| Training Loss | Confusion Matrix (Model vs. Reality) |
+|---------------|--------------------------------------|
+| <img src="./ClassificationtrainingLOSS.png" width="280"/> | <img src="./media_images_confusion_matrix_29_9df7ad973a68b7b5a839.png" width="400"/> |
+
+---
+
+### ✅ Easy-to-Understand Insights
+- 📈 **Validation Accuracy** stayed consistently high → model is reliable in unseen data.  
+- 📉 **Validation Loss** decreased over time → fewer mistakes as learning improved.  
+- 🧠 **Confusion Matrix** shows:  
+  - Most Gliomas and Meningiomas were classified correctly.  
+  - Some confusion between Pituitary vs Glioma (similar features in MRIs).  
+
+In plain terms: the model **learned well**, but like a junior doctor, it sometimes confuses tumors with similar patterns. With more training data, performance could become even more robust.
 
 ---
 
 ## ⚙️ Code Implementation
 
 ```python
-# Training 3D U-Net for segmentation
-import torch
-from monai.networks.nets import UNet
-
 model = UNet(
     dimensions=3,
     in_channels=4,
@@ -75,3 +87,24 @@ model = UNet(
 # Dice + Cross Entropy Loss
 from monai.losses import DiceCELoss
 loss_function = DiceCELoss(include_background=True, to_onehot_y=True, softmax=True)
+```
+
+
+---
+
+## 🖼️ Final Output Example
+
+Here’s an example of the pipeline in action —  
+from raw MRI input → segmentation masks → classification result:  
+
+![Final Result](Result.png)
+
+---
+
+## 📚 References
+- Menze, B. H., et al. "The Multimodal Brain Tumor Image Segmentation Benchmark (BraTS)." *IEEE Transactions on Medical Imaging*, 2015.  
+- Bakas, S., et al. "Advancing The Cancer Genome Atlas glioma MRI collections with expert segmentation labels and radiomic features." *Scientific Data*, 2017.  
+- BraTS Challenge 2025: [https://www.med.upenn.edu/cbica/brats2025](https://www.med.upenn.edu/cbica/brats2025)  
+- Ronneberger, O., et al. "U-Net: Convolutional Networks for Biomedical Image Segmentation." *MICCAI*, 2015.  
+- Huang, G., et al. "Densely Connected Convolutional Networks (DenseNet)." *CVPR*, 2017.  
+
