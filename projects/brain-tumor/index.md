@@ -3,30 +3,69 @@ layout: default
 title: Brain Tumor Segmentation & Classification
 ---
 
-# 🧠 Brain Tumor Segmentation & Classification
+# 🧠 Deep Learning-Driven MRI Analysis for Brain Tumor Detection, Segmentation & Classification  
 
-**Stack:** Python, PyTorch, MONAI, Apache Airflow, 3D Slicer, Hugging Face, Weights & Biases  
-**Data:** BraTS (University of Pennsylvania)  
-**Repo:** <https://github.com/Adnane-Ahroum/BrainTumorPipeline>
+This project implements a **two-stage AI pipeline** for brain tumor analysis using the **BraTS dataset (University of Pennsylvania)**.  
+It combines **segmentation (U-Net)** and **classification (DenseNet-121)**, optimized for clinical interpretability and reproducibility.  
 
-## Problem
-Automate tumor **segmentation** and patient **classification** from MRI scans to support clinical workflows.
+---
 
-## Approach
-- Preprocessing and augmentation pipeline for multi‑modal MRI volumes.  
-- **U‑Net** (segmentation) and **DenseNet121** (classification).  
-- Orchestrated with **Apache Airflow** for reproducible stages (ingest → preprocess → train → eval).
+## 📊 Capstone Poster
+![Capstone Poster](/assets/images/capstone-poster.png)
 
-## Results (example placeholders)
-- Dice score (WT): 0.89 · (TC): 0.84 · (ET): 0.81  
-- Classification accuracy: 91% on held‑out set  
-_Add your real numbers/screenshots._
+---
 
-## What I learned
-Efficient handling of 3D medical data, evaluation pitfalls (class imbalance), and experiment tracking.
+## 🔬 Pipeline Architecture
+![Pipeline Architecture](/assets/images/pipeline-architecture.png)
 
-## Artifacts
-- Model weights, training logs, sample predictions (see repo).  
-- Demo notebook and pipeline DAG.
+**Stage 1 — Segmentation (3D U-Net):**
+- Inputs: multi-modal MRI scans (T1, T1ce, T2, FLAIR)  
+- Outputs: WT (Whole Tumor), TC (Tumor Core), ET (Enhancing Tumor) masks  
+- Loss: Dice + Cross-Entropy  
 
-[← Back to Home](/)
+**Stage 2 — Classification (DenseNet-121):**
+- Inputs: segmented tumor region  
+- Outputs: Tumor Type → Glioma, Meningioma, or Pituitary  
+- Conditional check: if segmentation mask = empty, classification ignored  
+
+---
+
+## 📈 Results & Visualizations
+
+### Segmentation Performance
+- Dice Loss converged to **0.18** → strong overlap between predicted vs. ground truth masks  
+- Visual comparison:
+
+![Segmentation Results](/assets/images/segmentation-results.png)
+
+---
+
+### Classification Results
+- Glioma: **97% accuracy**  
+- Meningioma: **78% accuracy**  
+- Pituitary: **85% accuracy**  
+
+Visualization (blue = ground truth, red = prediction):  
+![Classification MRI](/assets/images/classification-mri.png)
+
+---
+
+## ⚙️ Code Implementation
+
+```python
+# Training 3D U-Net for segmentation
+import torch
+from monai.networks.nets import UNet
+
+model = UNet(
+    dimensions=3,
+    in_channels=4,
+    out_channels=4,
+    channels=(16, 32, 64, 128, 256),
+    strides=(2, 2, 2, 2),
+    num_res_units=2
+).to(device)
+
+# Dice + Cross Entropy Loss
+from monai.losses import DiceCELoss
+loss_function = DiceCELoss(include_background=True, to_onehot_y=True, softmax=True)
