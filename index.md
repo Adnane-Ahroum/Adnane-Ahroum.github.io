@@ -6,7 +6,7 @@ title: Home
 # 👋 Hi, I’m **Adnane Ahroum**
 
 <div class="hero">
-  <img src="/assets/images/avatar.jpg" alt="Adnane Ahroum headshot" class="avatar" />
+  <img src="/assets/Profile Picture.jpg" alt="Adnane Ahroum headshot" class="avatar" />
   <div>
     <em>Data Science graduate student | AI & Machine Learning</em><br/>
     New Rochelle, NY — open to internships & collaborations<br/>
