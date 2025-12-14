@@ -1,0 +1,141 @@
+# The Site Configuration
+
+# Import the theme
+theme: jekyll-theme-chirpy
+
+lang: en
+
+timezone: America/New_York
+
+# jekyll-seo-tag settings
+title: Adnane Ahroum
+
+tagline: Data Science Graduate Student | AI & Machine Learning
+
+description: >-
+  Data Science graduate student experienced in AI, Machine Learning, Deep Learning, and Healthcare AI. 
+  Passionate about building intelligent systems that turn data into decisions.
+
+url: "https://adnane-ahroum.github.io"
+
+github:
+  username: Adnane-Ahroum
+
+social:
+  name: Adnane Ahroum
+  email: adnaneahroum69@gmail.com
+  links:
+    - https://github.com/Adnane-Ahroum
+    - https://www.linkedin.com/in/adnane-ahroum-337576185/
+
+webmaster_verifications:
+  google:
+  bing:
+  alexa:
+  yandex:
+  baidu:
+  facebook:
+
+analytics:
+  google:
+    id:
+  goatcounter:
+    id:
+
+pageviews:
+  provider:
+
+theme_mode:
+
+cdn:
+
+avatar: "/assets/Profile Picture.jpg"
+
+social_preview_image:
+
+toc: true
+
+comments:
+  provider:
+
+assets:
+  self_host:
+    enabled:
+    env:
+
+pwa:
+  enabled: true
+  cache:
+    enabled: true
+    deny_paths:
+
+paginate: 10
+
+baseurl: ""
+
+kramdown:
+  footnote_backlink: "&#8617;&#xfe0e;"
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: true
+      toc: true
+      permalink: /posts/:title/
+  - scope:
+      path: _drafts
+    values:
+      comments: false
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
+
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - tools
+  - README.md
+  - LICENSE
+  - "*.config.js"
+  - package*.json
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
