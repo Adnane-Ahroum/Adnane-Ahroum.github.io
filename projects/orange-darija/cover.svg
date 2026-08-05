@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1c1917"/>
+      <stop offset="100%" stop-color="#292524"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#g)"/>
+  <rect x="48" y="48" width="1104" height="579" rx="18" fill="none" stroke="#d6d3d1" stroke-width="2" opacity="0.25"/>
+  <text x="80" y="200" fill="#fafaf9" font-family="Georgia, serif" font-size="52" font-weight="700">English → Darija</text>
+  <text x="80" y="280" fill="#a8a29e" font-family="Segoe UI, sans-serif" font-size="28">Neural Machine Translation · Orange Maroc</text>
+  <text x="80" y="380" fill="#fafaf9" font-family="Segoe UI, sans-serif" font-size="36">Hello  ·  سلام</text>
+  <text x="80" y="450" fill="#a8a29e" font-family="Segoe UI, sans-serif" font-size="22">Whisper STT  ·  Transformer Seq2Seq  ·  NLP</text>
+</svg>

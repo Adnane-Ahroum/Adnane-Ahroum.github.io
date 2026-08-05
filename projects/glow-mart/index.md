@@ -1,20 +1,19 @@
 ---
-layout: default
-title: Glow Mart (Mobile App)
+layout: page
+title: Glow Mart
 ---
 
-# 💡 Glow Mart
+<img class="project-cover" src="{{ '/projects/glow-mart/cover.jpg' | relative_url }}" alt="Glow Mart product catalog imagery" />
 
-**Stack:** React‑Native, TypeScript, Firebase, JavaScript  
-**Repo:** <https://github.com/Adnane-Ahroum/GlowMart>
+**Stack:** React Native, TypeScript, Firebase, JavaScript  
+**Repo:** [GlowMart](https://github.com/Adnane-Ahroum/GlowMart)
 
-A shopping app for a lighting retailer featuring product browsing, order tracking, and bill retrieval.
+Mobile shopping app (iOS & Android) for lighting products, built for Saint Mediterranean Lux —
+product browsing, order tracking, and bill retrieval.
 
-## Highlights
-- Mobile‑first UX; simple information architecture.  
-- Realtime backend with Firebase.
+## App screens
 
-## What I learned
-Shipping usable features under real business constraints; trade‑offs between speed and robustness.
+<img class="project-cover" src="{{ '/projects/glow-mart/obsimage1.png' | relative_url }}" alt="Glow Mart onboarding screen" />
+<img class="project-cover" src="{{ '/projects/glow-mart/obsimage2.png' | relative_url }}" alt="Glow Mart onboarding screen 2" />
 
-[← Back to Home](/)
+[← Back to Home]({{ '/' | relative_url }})
